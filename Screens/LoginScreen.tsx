@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignContent: 'center',
       alignSelf: 'stretch',
-      padding: 50,
+      padding: 40,
       gap: 16,
    },
    title: {
@@ -61,6 +61,6 @@ const styles = StyleSheet.create({
       height: 180,
       position: 'absolute',
       zIndex: 1,
-      top: 45,
+      bottom: 46,
    },
 });
