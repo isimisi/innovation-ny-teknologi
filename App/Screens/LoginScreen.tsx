@@ -1,7 +1,7 @@
 import { Button, Text, useTheme } from '@ui-kitten/components';
 import { Image, StyleSheet, View, SafeAreaView } from 'react-native';
 import LoginForm from '../Components/LoginForm';
-import LoginIcon from '../../assets/LoginIcon.svg';
+import CloudIcon from '../../assets/CloudIcon.svg';
 import { ScreenProps } from '../Components/Navigator';
 import ScreenLayout from '../Components/ScreenLayout';
 
@@ -21,7 +21,7 @@ export default function LoginScreen({ navigation }: ScreenProps) {
                      style={styles.accountAnalysisImage}
                      source={require('../../assets/account-analysis.png')}
                   />
-                  <LoginIcon width={300} />
+                  <CloudIcon width={300} />
                </View>
                <Text
                   style={[
@@ -31,7 +31,7 @@ export default function LoginScreen({ navigation }: ScreenProps) {
                   category="h1">
                   Login
                </Text>
-               <LoginForm />
+               <LoginForm onSuccess={() => navigation.navigate('App')} />
                <View>
                   <Text
                      style={[

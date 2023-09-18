@@ -4,21 +4,28 @@ import EmailOutlineIcon from './Icons/EmailOutlineIcon';
 import passwordFieldIcon from './Icons/PasswordFieldIcon';
 import { useState } from 'react';
 import { supabase } from '../../lib/supabase';
+import LoadingIndicator from './LoadingIndicator';
 
-export default function LoginForm(props: ViewProps) {
+interface Props extends ViewProps {
+   onSuccess: () => void;
+}
+
+export default function LoginForm({ onSuccess, ...props }: Props) {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [loading, setLoading] = useState(false);
 
    async function signInWithEmail() {
+      // add validation and error!
       setLoading(true);
       const { error } = await supabase.auth.signInWithPassword({
          email: email,
          password: password,
       });
 
-      if (error) Alert.alert(error.message);
       setLoading(false);
+      if (error) return Alert.alert(error.message, error.stack);
+      onSuccess();
    }
 
    return (
@@ -40,7 +47,7 @@ export default function LoginForm(props: ViewProps) {
                onChangeText={(text) => setPassword(text)}
                value={password}
                secureTextEntry={true}
-               placeholder="Password"
+               placeholder="********"
                autoCapitalize={'none'}
             />
             <Button style={styles.forgotPasswordbutton} appearance="ghost">
@@ -51,6 +58,7 @@ export default function LoginForm(props: ViewProps) {
             size="medium"
             style={styles.loginButton}
             disabled={loading}
+            accessoryRight={loading ? LoadingIndicator : undefined}
             onPress={() => signInWithEmail()}>
             {(props) => (
                <Text {...props} style={[props?.style, styles.loginButtonText]}>

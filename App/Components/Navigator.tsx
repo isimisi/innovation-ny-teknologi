@@ -5,10 +5,12 @@ import LoginScreen from '../Screens/LoginScreen';
 import SignUpScreen from '../Screens/SignUpScreen';
 
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import AppScreen from '../Screens/AppScreen';
 
 type RootStackParamList = {
    Login: undefined;
    Signup: undefined;
+   App: undefined;
 };
 
 export type ScreenProps = NativeStackScreenProps<RootStackParamList>;
@@ -19,6 +21,7 @@ const HomeNavigator = () => (
    <Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
       <Screen name="Login" component={LoginScreen} />
       <Screen name="Signup" component={SignUpScreen} />
+      <Screen name="App" component={AppScreen} />
    </Navigator>
 );
 
