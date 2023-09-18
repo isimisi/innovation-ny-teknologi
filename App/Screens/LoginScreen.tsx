@@ -26,7 +26,7 @@ export default function LoginScreen({ navigation }: ScreenProps) {
                <Text
                   style={[
                      styles.alignTextCenter,
-                     { color: theme['color-basic-700'], fontWeight: '600' },
+                     { color: theme['color-gray-500'], fontWeight: '600' },
                   ]}
                   category="h1">
                   Login

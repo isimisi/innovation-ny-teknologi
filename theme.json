@@ -43,5 +43,14 @@
    "color-danger-600": "#DB3714",
    "color-danger-700": "#B71F0E",
    "color-danger-800": "#930D08",
-   "color-danger-900": "#7A0509"
+   "color-danger-900": "#7A0509",
+   "color-gray-100": "#EEF0F7",
+   "color-gray-200": "#DEE1F0",
+   "color-gray-300": "#BBBFD4",
+   "color-gray-400": "#9194A9",
+   "color-gray-500": "#5B5E71",
+   "color-gray-600": "#424661",
+   "color-gray-700": "#2D3151",
+   "color-gray-800": "#1D2041",
+   "color-gray-900": "#111436"
 }
