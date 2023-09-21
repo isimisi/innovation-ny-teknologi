@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 interface Props {
    children: JSX.Element;
 }
-
+// til min dovne hjerne så jeg slipper for at skrive styles ind hver gang jeg bruger Layout
 export default function ScreenLayout({ children }: Props) {
    return (
       <Layout style={styles.layout} level="3">

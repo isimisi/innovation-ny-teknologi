@@ -3,6 +3,8 @@ import { StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { ICON_PACKAGES } from './PackageNames';
 
+// alt her er til at loade et andet sæt ikoner ind
+// reference: https://akveo.github.io/react-native-ui-kitten/docs/guides/icon-packages#icon-packages
 export type MaterialIconName = keyof typeof MaterialIcons.glyphMap;
 
 interface Props {

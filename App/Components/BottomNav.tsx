@@ -1,11 +1,15 @@
 import React from 'react';
-import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
+import {
+   BottomNavigation,
+   BottomNavigationTab,
+   Layout,
+} from '@ui-kitten/components';
 import { StyleSheet, View } from 'react-native';
 import { SCREENS } from '../Constants/SCREENS';
 
 import HomeIcon from './Icons/HomeIcon';
 import HeartIcon from './Icons/HeartIcon';
-import BreifcaseIcon from './Icons/BriefCaseIcon';
+import BreifcaseIcon from './Icons/BriefcaseIcon';
 import AccountIcon from './Icons/AccountIcon';
 
 interface Props {
@@ -20,6 +24,7 @@ const screens = Object.values(SCREENS).slice(
 
 const IconMap = [HomeIcon, HeartIcon, BreifcaseIcon, AccountIcon];
 
+// den nedre komponent til at vise og navigere mellem de forskellige skærme
 export default function BottomNav({ screen, onSelectScreen }: Props) {
    return (
       <View style={styles.navigationContainer}>
@@ -46,7 +51,7 @@ export default function BottomNav({ screen, onSelectScreen }: Props) {
 
 const styles = StyleSheet.create({
    navigationContainer: {
-      width: '90%',
+      width: '100%',
       alignSelf: 'center',
    },
    bottomNavigation: {

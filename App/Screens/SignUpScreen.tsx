@@ -6,6 +6,7 @@ import { Image, StyleSheet, View, SafeAreaView } from 'react-native';
 
 import CloudIcon from '../../assets/CloudIcon.svg';
 
+// til når brugere skal oprette sig
 export default function SignUpScreen({ navigation }: ScreenProps) {
    const navigateBack = () => {
       navigation.goBack();
@@ -13,6 +14,7 @@ export default function SignUpScreen({ navigation }: ScreenProps) {
 
    const theme = useTheme();
 
+   // naivgerer til login skærmen
    const navigateSignup = () => {
       navigation.navigate('Login');
    };

@@ -7,14 +7,18 @@ import { supabase } from '../../lib/supabase';
 import LoadingIndicator from './LoadingIndicator';
 import AccountOutlineIcon from './Icons/AccountOutlineIcon';
 
+// til at oprette sig på appen
 export default function SignupForm(props: ViewProps) {
+   // info på brugeren
    const [nickName, setNickName] = useState('');
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [repeatPassword, setReapeatPassword] = useState('');
 
+   // loading state når vi afventer det assynkrone request som ka tage tid
    const [loading, setLoading] = useState(false);
 
+   // sender info til supabase backend 
    async function signUpWithEmail() {
       // add validation and error!
       if (password !== repeatPassword) {

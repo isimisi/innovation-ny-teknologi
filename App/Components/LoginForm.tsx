@@ -9,12 +9,17 @@ import LoadingIndicator from './LoadingIndicator';
 interface Props extends ViewProps {
    onSuccess: () => void;
 }
-
+// form til at logge ind på appen
 export default function LoginForm({ onSuccess, ...props }: Props) {
+   // info på brugeren
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
+
+   // loading når vi afventer svar fra backend
    const [loading, setLoading] = useState(false);
 
+   // funktion der sender credentials til supabase backend
+   // mangler self lidt
    async function signInWithEmail() {
       // add validation and error!
       setLoading(true);

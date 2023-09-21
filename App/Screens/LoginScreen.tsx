@@ -5,9 +5,11 @@ import CloudIcon from '../../assets/CloudIcon.svg';
 import { ScreenProps } from '../Components/Navigator';
 import ScreenLayout from '../Components/ScreenLayout';
 
+// login skærm når brugeren skal oprette sig - mest bare ui
 export default function LoginScreen({ navigation }: ScreenProps) {
    const theme = useTheme();
 
+   // navigerer til signup skærmen
    const navigateSignup = () => {
       navigation.navigate('Signup');
    };

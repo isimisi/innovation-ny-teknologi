@@ -5,9 +5,13 @@ import FavoriteScreen from './FavoriteScreen';
 import HistoryScreen from './HistoryScreen';
 import AccountScreen from './AccountScreen';
 import BottomNav from '../../Components/BottomNav';
-import { SafeAreaView } from 'react-native';
-import { SCREENS } from '../../Constants/SCREENS';
 
+import { SCREENS } from '../../Constants/SCREENS';
+import SafeAreaView from '../../Components/UI/SafeAreaView';
+
+// samler alle skærme på appen til det her viewpager
+// gør så man kan swipe til den næste skærm
+// dertil er der også bottom naivgation som gør det samme basically
 export default function AppScreen() {
    const [screenIndex, setScreenIndex] = useState(SCREENS.HOME);
 
@@ -16,20 +20,22 @@ export default function AppScreen() {
    }
 
    return (
-      <SafeAreaView style={{ flex: 1 }}>
-         <ViewPager
-            selectedIndex={screenIndex}
-            style={{ flex: 1 }}
-            onSelect={selectScreenHandler}>
-            <HomeScreen />
+      <>
+         <SafeAreaView>
+            <ViewPager
+               selectedIndex={screenIndex}
+               style={{ flex: 1 }}
+               onSelect={selectScreenHandler}>
+               <HomeScreen />
 
-            <FavoriteScreen />
+               <FavoriteScreen />
 
-            <HistoryScreen />
+               <HistoryScreen />
 
-            <AccountScreen />
-         </ViewPager>
+               <AccountScreen />
+            </ViewPager>
+         </SafeAreaView>
          <BottomNav screen={screenIndex} onSelectScreen={selectScreenHandler} />
-      </SafeAreaView>
+      </>
    );
 }
