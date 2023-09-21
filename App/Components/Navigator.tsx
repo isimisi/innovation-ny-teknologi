@@ -18,7 +18,7 @@ export type ScreenProps = NativeStackScreenProps<RootStackParamList>;
 const { Navigator, Screen } = createStackNavigator();
 
 const HomeNavigator = () => (
-   <Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+   <Navigator initialRouteName="App" screenOptions={{ headerShown: false }}>
       <Screen name="Login" component={LoginScreen} />
       <Screen name="Signup" component={SignUpScreen} />
       <Screen name="App" component={AppScreen} />

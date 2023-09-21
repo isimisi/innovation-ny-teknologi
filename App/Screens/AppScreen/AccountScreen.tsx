@@ -1,11 +1,11 @@
 import { SafeAreaView, Text, View } from 'react-native';
 import ScreenLayout from '../../Components/ScreenLayout';
 
-export default function FavoriteScreen() {
+export default function AccountScreen() {
    return (
       <ScreenLayout>
          <View>
-            <Text>Favorite</Text>
+            <Text>Account</Text>
          </View>
       </ScreenLayout>
    );

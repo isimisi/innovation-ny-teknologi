@@ -18,3 +18,8 @@ yarn start
 - [ ] transition mellem screens
 - [ ] forgot password
 - [ ] App screen
+    - [x] Bottom navigation + slide view
+    - [ ] main search
+    - [ ] favorite
+    - [ ] history
+    - [ ] account
