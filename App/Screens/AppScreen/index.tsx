@@ -34,8 +34,11 @@ export default function AppScreen() {
 
                <AccountScreen />
             </ViewPager>
+            <BottomNav
+               screen={screenIndex}
+               onSelectScreen={selectScreenHandler}
+            />
          </SafeAreaView>
-         <BottomNav screen={screenIndex} onSelectScreen={selectScreenHandler} />
       </>
    );
 }
