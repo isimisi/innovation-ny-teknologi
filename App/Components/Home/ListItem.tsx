@@ -3,7 +3,8 @@ import { ListRenderItemInfo, StyleSheet, View } from 'react-native';
 import Chip from '../UI/Chip';
 import { OfficeListItem } from '../../api/fetch';
 
-// Komponenten der bliver vist i listen på home screen
+// Der er endnu ikke tilføjet funktion til nedenstående, men dette er genstandene på listen, hvorpå lokation vælges
+// Funktionalitet og navigation tilføjes senere hen
 export default function ListItem({ item }: ListRenderItemInfo<OfficeListItem>) {
    const theme = useTheme();
 
