@@ -30,14 +30,14 @@ yarn start
 ## Screenshots
 
 <div style="display: flex; gap: 10px; width: 100%">
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
 <h6>Home (Jonatan)</h6>
 <img src="./.github/assets/screenshots/Home.png" alt="drawing" />
 </div>
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
 <h6>Login (Isaac)</h6>
 <img src="./.github/assets/screenshots/Login.png" alt="drawing" />
-</div><div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+</div><div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
 <h6>Signup (Isaac)</h6>
 <img src="./.github/assets/screenshots/Signup.png" alt="drawing" />
 </div>
