@@ -19,7 +19,7 @@ const { Navigator, Screen } = createStackNavigator();
 
 // bruges til at navigere rundt på forskellige "routes"/"skærme" på appen
 const HomeNavigator = () => (
-   <Navigator initialRouteName="App" screenOptions={{ headerShown: false }}>
+   <Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
       <Screen name="Login" component={LoginScreen} />
       <Screen name="Signup" component={SignUpScreen} />
       <Screen name="App" component={AppScreen} />

@@ -24,6 +24,19 @@ yarn start
 
 - Isaac
     - Alt andet
+      - kald til api i form af login og signup
+      - Masser af knapper på forskellige sider
+
+## Screenshots
+
+#### Home (Jonatan)
+![alt text](./.github/assets/screenshots/Home.png)
+
+#### Login (Isaac)
+![alt text](./.github/assets/screenshots/Login.png)
+
+#### Signup (Isaac)
+![alt text](./.github/assets/screenshots/Signup.png)
 
 
 ### TODO
