@@ -11,7 +11,7 @@ yarn start
 ```
 
 ## Who made what
-- Jonatan
+- Jonatan (153701)
     - App/Screens/HomeScreen.tsx
         - Fetcher data fra vores api og giver dataen til Home komponentet (kald til api + 2 Views)
     - App/Components/Home
@@ -22,7 +22,7 @@ yarn start
             - index - Samling af de to komponenter (3 Views)
 
 
-- Isaac
+- Isaac (152869)
     - Alt andet
       - kald til api i form af login og signup
       - Masser af knapper på forskellige sider
