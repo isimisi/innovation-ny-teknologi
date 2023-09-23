@@ -17,7 +17,7 @@ export type ScreenProps = NativeStackScreenProps<RootStackParamList>;
 
 const { Navigator, Screen } = createStackNavigator();
 
-// bruges til at navigere rundt på forskellige "routes"/"skærme" på appen 
+// bruges til at navigere rundt på forskellige "routes"/"skærme" på appen
 const HomeNavigator = () => (
    <Navigator initialRouteName="App" screenOptions={{ headerShown: false }}>
       <Screen name="Login" component={LoginScreen} />

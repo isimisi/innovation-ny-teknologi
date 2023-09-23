@@ -1,9 +1,10 @@
 import { Text, useTheme } from '@ui-kitten/components';
 import { ListRenderItemInfo, StyleSheet, View } from 'react-native';
 import Chip from '../UI/Chip';
+import { OfficeListItem } from '../../api/fetch';
 
 // Komponenten der bliver vist i listen på home screen
-export default function ListItem(info: ListRenderItemInfo<{ title: string }>) {
+export default function ListItem({ item }: ListRenderItemInfo<OfficeListItem>) {
    const theme = useTheme();
 
    return (
@@ -13,20 +14,21 @@ export default function ListItem(info: ListRenderItemInfo<{ title: string }>) {
             <Text
                category="h2"
                style={[styles.title, { color: theme['color-primary-500'] }]}>
-               {info.item.title}
+               {item.name}
             </Text>
             <Text
                appearance="alternative"
                style={{ color: theme['color-gray-500'] }}>
-               addressvej 2
+               {item.address}
             </Text>
             <Text appearance="hint" category="s2">
-               23. Nov 2023 - 24. Nov 2023
+               {item.date.from}
+               {item.date.to ? `- ${item.date.to}` : ''}
             </Text>
             <View style={styles.chips}>
-               {/* meta data */}
-               <Chip>3 Seats</Chip>
-               <Chip>600 kr</Chip>
+               {item.meta.map((m) => (
+                  <Chip key={`${item.id}-${m}`}>{m}</Chip>
+               ))}
             </View>
          </View>
       </View>

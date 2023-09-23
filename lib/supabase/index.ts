@@ -1,6 +1,7 @@
 import 'react-native-url-polyfill/auto';
 import * as SecureStore from 'expo-secure-store';
 import { createClient } from '@supabase/supabase-js';
+import { Database } from './types';
 
 // til at forbinde til supabase backend
 const ExpoSecureStoreAdapter = {
@@ -22,7 +23,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
    throw new Error('env variables not set!');
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
    auth: {
       storage: ExpoSecureStoreAdapter as any,
       autoRefreshToken: true,
