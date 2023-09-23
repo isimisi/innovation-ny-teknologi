@@ -29,14 +29,21 @@ yarn start
 
 ## Screenshots
 
-#### Home (Jonatan)
-![alt text](./.github/assets/screenshots/Home.png)
+<div style="display: flex; gap: 10px; width: 100%">
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<h6>Home (Jonatan)</h6>
+<img src="./.github/assets/screenshots/Home.png" alt="drawing" />
+</div>
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<h6>Login (Isaac)</h6>
+<img src="./.github/assets/screenshots/Login.png" alt="drawing" />
+</div><div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<h6>Signup (Isaac)</h6>
+<img src="./.github/assets/screenshots/Signup.png" alt="drawing" />
+</div>
+</div>
 
-#### Login (Isaac)
-![alt text](./.github/assets/screenshots/Login.png)
 
-#### Signup (Isaac)
-![alt text](./.github/assets/screenshots/Signup.png)
 
 
 ### TODO
