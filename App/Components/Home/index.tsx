@@ -8,8 +8,8 @@ interface Props {
    data: OfficeListItem[];
 }
 
-// Komponent til Home screen som skal render en liste med items loadet fra backend
-// samt har den en search funktion til at søge efter kontorer
+// Selve listen hvorpå lokationer/genstande, defineret i ListItem.tsx fremgår
+// Endvidere er der oprettet en søgeboks, hvilken på nuværende tidspunkt ikke besidder funktionalitet, denne i Search.tsx
 export default function Home({ data }: Props) {
    return (
       <View style={styles.container}>

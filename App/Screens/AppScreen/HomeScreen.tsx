@@ -4,8 +4,7 @@ import { OfficeListItem, fetchOffices } from '../../api/fetch';
 import { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
 
-// home screen som lige nu kun loader home screen
-// skal måske lave useefect her og hente data
+// Her vises index.tsx, hvilket pt. indeholder listen over mulige lokationer samt søgefelt
 export default function HomeScreen() {
    const [offices, setOffices] = useState<OfficeListItem[]>([]);
 

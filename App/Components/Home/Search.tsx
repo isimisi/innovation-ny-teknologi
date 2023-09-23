@@ -5,7 +5,7 @@ import PressableChip from '../UI/PressableChip';
 import TuneIcon from '../Icons/TuneIcon';
 import IconButton from '../UI/IconButton';
 
-// søge komponeneten til at søge efter kontorer
+// Boksen hvori der kan søges efter lokationer på listen
 export default function Search() {
    const theme = useTheme();
 
