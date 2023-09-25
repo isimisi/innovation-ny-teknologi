@@ -1,7 +1,6 @@
-import { Icon, IconElement, IconProps, useTheme } from '@ui-kitten/components';
-import { RenderProp } from '@ui-kitten/components/devsupport';
+import { IconElement, useTheme } from '@ui-kitten/components';
 import React from 'react';
-import { ImageProps, Pressable, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 
 interface Props {
    onPress?: (...args: any) => void;
