@@ -26,6 +26,7 @@ yarn start
     - Alt andet
       - kald til api i form af login og signup
       - Masser af knapper på forskellige sider
+  - <a href="https://youtu.be/DcRrCmX5lig" target="_blank">Link til video af App</a>
 
 ## Screenshots
 
