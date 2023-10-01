@@ -1,5 +1,5 @@
 import { Button, Input, Text } from '@ui-kitten/components';
-import { Alert, StyleSheet, View, ViewProps } from 'react-native';
+import { StyleSheet, View, ViewProps } from 'react-native';
 import EmailOutlineIcon from './Icons/EmailOutlineIcon';
 import passwordFieldIcon from './Icons/PasswordFieldIcon';
 import { useState } from 'react';
@@ -8,28 +8,45 @@ import LoadingIndicator from './LoadingIndicator';
 
 interface Props extends ViewProps {
    onSuccess: () => void;
+   onError: (message?: string) => void;
 }
 // form til at logge ind på appen
-export default function LoginForm({ onSuccess, ...props }: Props) {
+export default function LoginForm({ onSuccess, onError, ...props }: Props) {
    // info på brugeren
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
 
+   // error handling
+
    // loading når vi afventer svar fra backend
    const [loading, setLoading] = useState(false);
 
+   function inputChangeHandler(dispatch: (text: string) => void) {
+      return function (text: string) {
+         dispatch(text);
+      };
+   }
+
    // funktion der sender credentials til supabase backend
-   // mangler self lidt
    async function signInWithEmail() {
+      const trimmedEmail = email.trim(),
+         trimmedPassword = password.trim();
+
+      // tjekker hvis input er tomt så vil vi ikke sende et request til backend
+      if (trimmedEmail.length < 1 || trimmedPassword.length < 1) {
+         return;
+      }
+
       // add validation and error!
       setLoading(true);
       const { error } = await supabase.auth.signInWithPassword({
-         email: email,
-         password: password,
+         email: email.trim(),
+         password: password.trim(),
       });
 
       setLoading(false);
-      if (error) return Alert.alert(error.message, error.stack);
+      // mangler at håndtere error hvis brugeren ikke har valideret deres email
+      if (error) return onError();
       onSuccess();
    }
 
@@ -38,7 +55,7 @@ export default function LoginForm({ onSuccess, ...props }: Props) {
          <Input
             style={styles.input}
             accessoryLeft={EmailOutlineIcon}
-            onChangeText={(text) => setEmail(text)}
+            onChangeText={inputChangeHandler(setEmail)}
             label="Email"
             value={email}
             placeholder="email@address.com"
@@ -49,7 +66,7 @@ export default function LoginForm({ onSuccess, ...props }: Props) {
                style={styles.input}
                accessoryLeft={passwordFieldIcon}
                label="Password"
-               onChangeText={(text) => setPassword(text)}
+               onChangeText={inputChangeHandler(setPassword)}
                value={password}
                secureTextEntry={true}
                placeholder="********"
@@ -91,5 +108,8 @@ const styles = StyleSheet.create({
    loginButtonText: {
       fontWeight: '500',
       textAlign: 'center',
+   },
+   backdrop: {
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
    },
 });

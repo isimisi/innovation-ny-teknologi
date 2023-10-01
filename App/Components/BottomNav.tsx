@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-   BottomNavigation,
-   BottomNavigationTab,
-   Layout,
-} from '@ui-kitten/components';
+import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 import { StyleSheet, View } from 'react-native';
 import { SCREENS } from '../Constants/SCREENS';
 
