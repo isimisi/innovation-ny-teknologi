@@ -7,18 +7,29 @@ import { MaterialIconsPack } from './App/Packages/MaterialIconsPack';
 import { MaterialCommunityIconsPack } from './App/Packages/MaterialIconsCommunityPack';
 import { default as mapping } from './mapping.json';
 
-import { AppNavigator } from './App/Components/Navigator';
+import { AppNavigator } from './App/Screens/Navigator';
 
-export default () => (
-   <>
-      <IconRegistry
-         icons={[EvaIconsPack, MaterialIconsPack, MaterialCommunityIconsPack]}
-      />
-      <ApplicationProvider
-         {...eva}
-         customMapping={{ ...eva.mapping, ...mapping }}
-         theme={{ ...eva.light, ...theme }}>
-         <AppNavigator />
-      </ApplicationProvider>
-   </>
-);
+import { store } from './lib/redux/store';
+import { Provider as ReduxProvider } from 'react-redux';
+
+export default () => {
+   return (
+      <>
+         <IconRegistry
+            icons={[
+               EvaIconsPack,
+               MaterialIconsPack,
+               MaterialCommunityIconsPack,
+            ]}
+         />
+         <ReduxProvider store={store}>
+            <ApplicationProvider
+               {...eva}
+               customMapping={{ ...eva.mapping, ...mapping }}
+               theme={{ ...eva.light, ...theme }}>
+               <AppNavigator />
+            </ApplicationProvider>
+         </ReduxProvider>
+      </>
+   );
+};

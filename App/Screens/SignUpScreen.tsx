@@ -1,8 +1,9 @@
-import { ScreenProps } from '../Components/Navigator';
+import { ScreenProps } from './Navigator';
 import ScreenLayout from '../Components/ScreenLayout';
 import SignupForm from '../Components/SignupForm';
 import { Button, Text, useTheme } from '@ui-kitten/components';
-import { Image, StyleSheet, View, SafeAreaView } from 'react-native';
+import { Image, StyleSheet, View, SafeAreaView, Keyboard } from 'react-native';
+import { TouchableWithoutFeedback } from '@ui-kitten/components/devsupport';
 
 import CloudIcon from '../../assets/CloudIcon.svg';
 
@@ -21,41 +22,49 @@ export default function SignUpScreen({ navigation }: ScreenProps) {
 
    return (
       <SafeAreaView style={{ flex: 1 }}>
-         <ScreenLayout>
-            <View style={styles.signupScreenContainer}>
-               <View style={styles.iconContainer}>
-                  <Image
-                     style={styles.accountAnalysisImage}
-                     source={require('../../assets/account-analysis.png')}
-                  />
-                  <CloudIcon style={styles.cloudIcon} width={216} />
-               </View>
+         <TouchableWithoutFeedback
+            style={{ flex: 1 }}
+            onPress={Keyboard.dismiss}
+            accessible={false}>
+            <ScreenLayout>
+               <View style={styles.signupScreenContainer}>
+                  <View style={styles.iconContainer}>
+                     <Image
+                        style={styles.accountAnalysisImage}
+                        source={require('../../assets/account-analysis.png')}
+                     />
+                     <CloudIcon style={styles.cloudIcon} width={216} />
+                  </View>
 
-               <View style={styles.signupContainer}>
-                  <Text
-                     style={[
-                        styles.title,
-                        { color: theme['color-gray-500'], fontWeight: '600' },
-                     ]}
-                     category="h1">
-                     Sign Up
-                  </Text>
-                  <SignupForm />
-                  <View>
+                  <View style={styles.signupContainer}>
                      <Text
                         style={[
-                           styles.alignTextCenter,
-                           { color: theme['color-basic-600'] },
-                        ]}>
-                        Already have an account?
+                           styles.title,
+                           {
+                              color: theme['color-gray-500'],
+                              fontWeight: '600',
+                           },
+                        ]}
+                        category="h1">
+                        Sign Up
                      </Text>
-                     <Button onPress={navigateSignup} appearance="ghost">
-                        Login to existing account
-                     </Button>
+                     <SignupForm />
+                     <View>
+                        <Text
+                           style={[
+                              styles.alignTextCenter,
+                              { color: theme['color-basic-600'] },
+                           ]}>
+                           Already have an account?
+                        </Text>
+                        <Button onPress={navigateSignup} appearance="ghost">
+                           Login to existing account
+                        </Button>
+                     </View>
                   </View>
                </View>
-            </View>
-         </ScreenLayout>
+            </ScreenLayout>
+         </TouchableWithoutFeedback>
       </SafeAreaView>
    );
 }
