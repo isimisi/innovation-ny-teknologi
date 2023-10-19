@@ -5,7 +5,6 @@ import { default as theme } from './theme.json';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { MaterialIconsPack } from './App/Packages/MaterialIconsPack';
 import { MaterialCommunityIconsPack } from './App/Packages/MaterialIconsCommunityPack';
-import { default as mapping } from './mapping.json';
 
 import { AppNavigator } from './App/Screens/Navigator';
 
@@ -25,7 +24,7 @@ export default () => {
          <ReduxProvider store={store}>
             <ApplicationProvider
                {...eva}
-               customMapping={{ ...eva.mapping, ...mapping }}
+               customMapping={{ ...eva.mapping }}
                theme={{ ...eva.light, ...theme }}>
                <AppNavigator />
             </ApplicationProvider>

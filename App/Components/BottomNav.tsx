@@ -7,6 +7,7 @@ import HomeIcon from './Icons/HomeIcon';
 import HeartIcon from './Icons/HeartIcon';
 import BreifcaseIcon from './Icons/BriefcaseIcon';
 import AccountIcon from './Icons/AccountIcon';
+import NFCIcon from './Icons/NFCIcon';
 
 interface Props {
    screen: SCREENS;
@@ -18,7 +19,7 @@ const screens = Object.values(SCREENS).slice(
    Object.values(SCREENS).length / 2
 );
 
-const IconMap = [HomeIcon, HeartIcon, BreifcaseIcon, AccountIcon];
+const IconMap = [HomeIcon, HeartIcon, NFCIcon, BreifcaseIcon, AccountIcon];
 
 // den nedre komponent til at vise og navigere mellem de forskellige skærme
 export default function BottomNav({ screen, onSelectScreen }: Props) {

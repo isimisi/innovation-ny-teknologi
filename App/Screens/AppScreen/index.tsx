@@ -8,6 +8,7 @@ import BottomNav from '../../Components/BottomNav';
 
 import { SCREENS } from '../../Constants/SCREENS';
 import SafeAreaView from '../../Components/UI/SafeAreaView';
+import NFCScannerScreen from './NFCScannerScreen';
 
 // samler alle skærme på appen til det her viewpager
 // gør så man kan swipe til den næste skærm
@@ -29,6 +30,8 @@ export default function AppScreen() {
                <HomeScreen />
 
                <FavoriteScreen />
+
+               <NFCScannerScreen />
 
                <HistoryScreen />
 

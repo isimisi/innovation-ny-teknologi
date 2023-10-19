@@ -2,6 +2,7 @@
 export enum SCREENS {
    HOME,
    FAVORITE,
+   NFC,
    HISTORY,
    ACCOUNT,
 }

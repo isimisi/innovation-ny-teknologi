@@ -51,11 +51,10 @@ export async function getSession(): Promise<Session> {
 
    const { access_token, user } = data.session;
 
-   const {
-      data: profileData,
-      error: profileError,
-      ...r
-   } = await supabase.from('profiles').select().eq('id', user.id);
+   const { data: profileData, error: profileError } = await supabase
+      .from('profiles')
+      .select()
+      .eq('id', user.id);
 
    if (profileError) throw profileError;
 
