@@ -20,13 +20,18 @@ export default function AppScreen() {
       setScreenIndex(index);
    }
 
+   const shouldLoadComponent = (index: number): boolean =>
+      index === screenIndex;
+
    return (
       <>
          <SafeAreaView>
             <ViewPager
                selectedIndex={screenIndex}
                style={{ flex: 1 }}
-               onSelect={selectScreenHandler}>
+               shouldLoadComponent={shouldLoadComponent}
+               onSelect={selectScreenHandler}
+               swipeEnabled={false}>
                <HomeScreen />
 
                <FavoriteScreen />
