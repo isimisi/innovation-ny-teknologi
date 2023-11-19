@@ -1,4 +1,4 @@
-import { Text, useTheme } from '@ui-kitten/components';
+import { Text, useStyleSheet, useTheme } from '@ui-kitten/components';
 import { ListRenderItemInfo, Pressable, StyleSheet, View } from 'react-native';
 import Chip from '../UI/Chip';
 import { OfficeListItem } from '../../api/fetch';
