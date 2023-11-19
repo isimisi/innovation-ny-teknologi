@@ -3,6 +3,7 @@ import Scanner from '../../Components/NFC/Scanner';
 import { useEffect, useState } from 'react';
 import SeatSession from '../../Components/NFC/SeatSession';
 import MissingSession from '../../Components/NFC/MissingSession';
+import { Text } from 'react-native-svg';
 
 // kommende skærm
 export default function NFCScannerScreen() {
@@ -25,7 +26,7 @@ export default function NFCScannerScreen() {
          ) : (
             <>
                <MissingSession onPress={handleOpenNFCScaner} />
-               {scannerVisible && <Scanner cancel={handleCancelNFCScanner} />}
+               {/* {scannerVisible && <Scanner cancel={handleCancelNFCScanner} />} */}
             </>
          )}
       </ScreenLayout>

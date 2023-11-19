@@ -1,16 +1,28 @@
 import { Text, useTheme } from '@ui-kitten/components';
-import { ListRenderItemInfo, StyleSheet, View } from 'react-native';
+import { ListRenderItemInfo, Pressable, StyleSheet, View } from 'react-native';
 import Chip from '../UI/Chip';
 import { OfficeListItem } from '../../api/fetch';
 
+interface Props extends ListRenderItemInfo<OfficeListItem> {
+   onPress: (id: number) => void;
+}
+
 // Der er endnu ikke tilføjet funktion til nedenstående, men dette er genstandene på listen, hvorpå lokation vælges
 // Funktionalitet og navigation tilføjes senere hen
-export default function ListItem({ item }: ListRenderItemInfo<OfficeListItem>) {
+export default function ListItem({ item, onPress }: Props) {
    const theme = useTheme();
 
    return (
-      <View
-         style={[styles.card, { backgroundColor: theme['color-basic-100'] }]}>
+      <Pressable
+         onPress={() => onPress(item.id)}
+         style={({ pressed }) => [
+            styles.card,
+            {
+               backgroundColor: pressed
+                  ? theme['color-basic-200']
+                  : theme['color-basic-100'],
+            },
+         ]}>
          <View style={styles.context}>
             <Text
                category="h2"
@@ -32,7 +44,7 @@ export default function ListItem({ item }: ListRenderItemInfo<OfficeListItem>) {
                ))}
             </View>
          </View>
-      </View>
+      </Pressable>
    );
 }
 

@@ -25,11 +25,21 @@
             "backgroundColor": "#EAEFF5"
          },
          "permissions": ["android.permission.NFC"],
-         "package": "com.isimisi.test"
+         "package": "com.isimisi.test",
+         "config": {
+            "googleMaps": {
+               "apiKey": "AIzaSyDhA5PsmYlPSIkldhmuGrfPbQApb8heWgE"
+            }
+         }
       },
       "web": {
          "favicon": "./assets/favicon.png"
       },
-      "plugins": ["react-native-nfc-manager"]
+      "plugins": ["react-native-nfc-manager"],
+      "extra": {
+         "eas": {
+            "projectId": "ce6b1ac5-660c-4a48-b50e-67798e57f903"
+         }
+      }
    }
 }
