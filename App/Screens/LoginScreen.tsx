@@ -25,8 +25,8 @@ export default function LoginScreen({ navigation }: ScreenProps) {
    React.useEffect(() => {
       getSession()
          .then((session) => {
-            dispatch(login(session));
-            navigation.navigate('App');
+            // dispatch(login(session));
+            // navigation.navigate('App');
          })
          .catch(() => dispatch(logout()))
          .finally(() => setLoading(false));
