@@ -56,7 +56,8 @@ yarn start
 - [ ] forgot password
 - [ ] App screen
     - [x] Bottom navigation + slide view
-    - [ ] main search
+    - [x] main search
+    - [x] NFC
     - [ ] favorite
     - [ ] history
     - [ ] account
