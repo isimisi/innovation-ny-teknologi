@@ -50,7 +50,7 @@ export default function BookingModal({
          visible={visible}
          style={styles.modal}
          backdropStyle={styles.backdrop}
-         onBackdropPress={onBackdropPress}>
+         onBackdropPress={handleBackdropPress}>
          <ViewPager
             selectedIndex={page}
             swipeEnabled={false}
@@ -63,7 +63,11 @@ export default function BookingModal({
                onCancel={handleBackdropPress}
                onConfirm={handleConfirmBooking}
             />
-            <Payment onBack={() => setPage(0)} onConfirm={() => setPage(2)} />
+            <Payment
+               onBack={() => setPage(0)}
+               onConfirm={() => setPage(2)}
+               item={item}
+            />
             <OrderDetail
                onBack={() => setPage(1)}
                onConfirm={handleBackdropPress}

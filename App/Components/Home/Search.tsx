@@ -1,13 +1,40 @@
 import { Input, useTheme } from '@ui-kitten/components';
-import { StyleSheet, View } from 'react-native';
+import {
+   NativeSyntheticEvent,
+   StyleSheet,
+   TextInputChangeEventData,
+   View,
+} from 'react-native';
 
 import PressableChip from '../UI/PressableChip';
 import TuneIcon from '../Icons/TuneIcon';
 import IconButton from '../UI/IconButton';
+import { useState } from 'react';
+type Timer = ReturnType<typeof setTimeout>;
+
+interface Props {
+   onSearch: (searchTerm: string) => void;
+}
 
 // Boksen hvori der kan søges efter lokationer på listen
-export default function Search() {
+export default function Search({ onSearch }: Props) {
    const theme = useTheme();
+   const [searchTerm, setSearchTerm] = useState('');
+   const [debouncer, setDebouncer] = useState<Timer>();
+
+   const handleChangeText = (text: string) => {
+      setSearchTerm(text);
+
+      if (debouncer) {
+         clearTimeout(debouncer);
+      }
+
+      setDebouncer(
+         setTimeout(() => {
+            onSearch(text);
+         }, 200)
+      );
+   };
 
    return (
       <View style={styles.container}>
@@ -18,6 +45,8 @@ export default function Search() {
                   { backgroundColor: theme['color-basic-100'] },
                ]}
                placeholder="Search Office..."
+               value={searchTerm}
+               onChangeText={handleChangeText}
             />
             <IconButton>
                <TuneIcon />

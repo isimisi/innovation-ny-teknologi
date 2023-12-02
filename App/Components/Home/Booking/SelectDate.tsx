@@ -4,14 +4,19 @@ import { Button, Card, Text, useStyleSheet } from '@ui-kitten/components';
 import ImageView from 'react-native-image-viewing';
 import stockImages from './stockImages';
 import ImageList from '../../UI/ImageList';
-import Chip from '../../UI/Chip';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Region } from 'react-native-maps';
 import { DateTime } from 'luxon';
 import DateTimePicker from '../../UI/DatetimePicker';
 import { OfficeListItem } from '../../../api/fetch';
+import bookingStyles from './styles';
 const randomIndex = Math.floor(Math.random() * stockImages.length);
 const randomImageSelection = stockImages[randomIndex];
-
+const initialRegion: Region = {
+   longitude: 12.529707066714764,
+   latitude: 55.681160982279025,
+   latitudeDelta: 0.008,
+   longitudeDelta: 0.008,
+};
 interface Datetime {
    date: null | DateTime;
    time: null | DateTime;
@@ -59,11 +64,6 @@ export default function SelectDate({
                <Text appearance="alternative" style={styles.address}>
                   {item.address}
                </Text>
-               <View style={styles.chips}>
-                  {item.meta.map((m) => (
-                     <Chip key={`${item.id}-${m}`}>{m}</Chip>
-                  ))}
-               </View>
 
                <DateTimePicker
                   label="From"
@@ -91,9 +91,13 @@ export default function SelectDate({
                }}
             />
 
-            <View>
+            <View style={styles.mapContainer}>
                {/* Tilføj funktionalitet så den viser hvor kontoret er */}
-               <MapView style={styles.map} provider={PROVIDER_GOOGLE} />
+               <MapView
+                  style={styles.map}
+                  provider={PROVIDER_GOOGLE}
+                  initialRegion={initialRegion}
+               />
             </View>
 
             <View style={styles.btnContainer}>
@@ -120,40 +124,11 @@ export default function SelectDate({
 }
 
 const themedStyles = StyleSheet.create({
-   card: {
-      borderRadius: 12,
-      alignSelf: 'center',
-      width: '80%',
-   },
-   title: {
-      fontWeight: '400',
-      color: 'color-primary-500',
-   },
+   ...bookingStyles,
    context: {
       gap: 2,
    },
    container: {
       gap: 12,
-   },
-   chips: {
-      gap: 2,
-      paddingVertical: 5,
-      flexDirection: 'row',
-      alignItems: 'flex-start',
-   },
-   map: {
-      width: '100%',
-      height: 120,
-      borderRadius: 12,
-   },
-   btnContainer: {
-      flexDirection: 'row',
-      gap: 4,
-   },
-   btn: {
-      flex: 1,
-   },
-   address: {
-      color: 'color-gray-500',
    },
 });

@@ -18,9 +18,30 @@ export default function Home({ data }: Props) {
       // id: 0,
       index: 0,
    });
+   const [offices, setOffices] = React.useState(data);
+
+   React.useEffect(() => {
+      setOffices(data);
+   }, [data]);
 
    const handlePressItem = (index: number) => {
       setSelectedOffice({ isVisible: true, index });
+   };
+
+   const handleSearch = (searchTerm: string) => {
+      searchTerm = searchTerm.toLocaleLowerCase();
+
+      if (searchTerm) {
+         setOffices(
+            data.filter(
+               (office) =>
+                  office.name.toLocaleLowerCase().includes(searchTerm) ||
+                  office.address.toLocaleLowerCase().includes(searchTerm)
+            )
+         );
+      } else {
+         setOffices(data);
+      }
    };
 
    const handleBackdropPress = () =>
@@ -28,10 +49,10 @@ export default function Home({ data }: Props) {
 
    return (
       <View style={styles.container}>
-         <Search />
+         <Search onSearch={handleSearch} />
          <List
             style={styles.listContainer}
-            data={data}
+            data={offices}
             renderItem={(info) => (
                <ListItem
                   {...info}
