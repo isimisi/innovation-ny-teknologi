@@ -25,7 +25,7 @@ export default function NFCScannerScreen() {
          ) : (
             <>
                <MissingSession onPress={handleOpenNFCScaner} />
-               {scannerVisible && <Scanner cancel={handleCancelNFCScanner} />}
+               {/* {scannerVisible && <Scanner cancel={handleCancelNFCScanner} />} */}
             </>
          )}
       </ScreenLayout>

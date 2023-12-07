@@ -99,7 +99,7 @@ export default function Payment({ onBack, onConfirm, item }: Props) {
                      </View>
                      <View style={styles.items}>
                         {mockOrder.map(({ order, price }) => (
-                           <View style={styles.itemContainer}>
+                           <View key={order} style={styles.itemContainer}>
                               <Text style={styles.item}>{order}</Text>
                               <Text style={styles.item}>
                                  {/* Sørger for at formattere prisen til xxx,xx kr */}

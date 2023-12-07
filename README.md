@@ -61,18 +61,67 @@ Backenden er lavet via [Supabase](https://supabase.com/) og en `.env` fil vil v√
 
 ## Screenshots
 
-<div style="display: flex; gap: 10px; width: 100%">
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
-<h6>Home (Jonatan)</h6>
-<img src="./.github/assets/screenshots/Home.png" alt="Home" width="200px" />
-</div>
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
-<h6>Login (Isaac)</h6>
-<img src="./.github/assets/screenshots/Login.png" alt="Login" width="200px" />
-</div><div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
-<h6>Signup (Isaac)</h6>
-<img src="./.github/assets/screenshots/Signup.png" alt="Signup" width="200px" />
-</div>
+<div style="display: flex; gap: 10px; width: 800px">
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Home (Jonatan)</h6>
+    <img src="./.github/assets/screenshots/Home.png" alt="Home" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Search (Isaac)</h6>
+    <img src="./.github/assets/screenshots/search.png" alt="Order Confirmation" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Login (Isaac)</h6>
+    <img src="./.github/assets/screenshots/Login.png" alt="Login" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Signup (Isaac)</h6>
+    <img src="./.github/assets/screenshots/Signup.png" alt="Signup" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Nfc (Isaac)</h6>
+    <img src="./.github/assets/screenshots/inital-nfc.png" alt="initial-nfc" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Nfc Scanner (Isaac)</h6>
+    <img src="./.github/assets/screenshots/nfc-scan.png" alt="Signup" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Booking Site (Isaac)</h6>
+    <img src="./.github/assets/screenshots/booking-site.png" alt="Booking Site" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Date Picker (Isaac)</h6>
+    <img src="./.github/assets/screenshots/date-picker.png" alt="Date Picker" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Time Picker (Isaac)</h6>
+    <img src="./.github/assets/screenshots/time-picker.png" alt="time Picker" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Booking with date selected (Isaac)</h6>
+    <img src="./.github/assets/screenshots/date-selected.png" alt="Booking With Date Selected" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Image Viewer (Isaac)</h6>
+    <img src="./.github/assets/screenshots/show-picture.png" alt="Image Viewer" width="200px" />
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 200px;">
+    <h6>Order Confirmation (Isaac)</h6>
+    <img src="./.github/assets/screenshots/order-confirmation.png" alt="Order Confirmation" width="200px" />
+  </div>
+
 </div>
 
 
