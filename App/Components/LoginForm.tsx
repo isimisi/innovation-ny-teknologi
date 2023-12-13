@@ -45,7 +45,7 @@ export default function LoginForm({ onSuccess, onError, ...props }: Props) {
       });
 
       setLoading(false);
-      // mangler at håndtere error hvis brugeren ikke har valideret deres email
+      // TODO: mangler at håndtere error hvis brugeren ikke har valideret deres email
       if (error) return onError();
       onSuccess();
    }
