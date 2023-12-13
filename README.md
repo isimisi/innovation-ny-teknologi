@@ -1,5 +1,7 @@
 # Innovation og Nyteknologi
 
+> *Comments are always failures. We must have them because we cannot always figure out how to express ourselves without them, but their use is not a cause for celebration.* - Martin, Robert C.
+
 ## Instruktioner
 
 Denne APP er blevet lavet med et Native Module til at bruge NFC.
