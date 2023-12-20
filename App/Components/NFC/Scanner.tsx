@@ -1,6 +1,6 @@
 import { Button, Modal, useTheme } from '@ui-kitten/components';
 import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import NfcManager, {
    NfcError,
    NfcEvents,
@@ -45,7 +45,7 @@ export default function Scanner({ cancel }: Props) {
    useEffect(() => {
       // Adding a listener for when a nfc tag has been discovered / read
       NfcManager.setEventListener(NfcEvents.DiscoverTag, (tag: TagEvent) => {
-         console.log('tag found:', tag);
+         Alert.alert(`Tag Found: { id: ${tag.id} }`);
       });
 
       // when component unmounts we want to remove the listener aswell

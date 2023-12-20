@@ -59,7 +59,7 @@ Backenden er lavet via [Supabase](https://supabase.com/) og en `.env` fil vil v√
     - Alt andet
       - kald til api i form af login og signup
       - Masser af knapper p√• forskellige sider
-  - <a href="https://youtu.be/DcRrCmX5lig" target="_blank">Link til video af App</a>
+  - <a href="https://youtu.be/jblTjLfLQYQ" target="_blank">Link til video af App</a>
 
 ## Screenshots
 
